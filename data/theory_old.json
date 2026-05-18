@@ -1,0 +1,740 @@
+[
+  {
+    "id": "limit_sequence",
+    "title": "Предел числовой последовательности",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "Число L называется пределом последовательности {a_n}, если для любого ε > 0 существует такой номер N = N(ε), что для всех n > N выполняется неравенство |a_n – L| < ε.",
+        "latex": "\\forall\\varepsilon>0 \\; \\exists N\\in\\mathbb{N}: \\; \\forall n>N \\; |a_n-L|<\\varepsilon",
+        "image": ":/data/formulas/limit_sequence/definition_1.png"
+      },
+      {
+        "type": "definition",
+        "level": "simplified",
+        "value": "Предел последовательности — это число, к которому члены последовательности становятся сколь угодно близкими при достаточно больших номерах."
+      },
+      {
+        "type": "example",
+        "level": "all",
+        "value": "Последовательность a_n = 1/n стремится к 0.",
+        "latex": "\\lim_{n\\to\\infty}\\frac{1}{n}=0",
+        "image": ":/data/formulas/limit_sequence/definition_2.png"
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "level": "rigorous",
+        "value": "Единственность предела: если предел существует, то он единственный.",
+        "latex": "\\lim a_n = A \\text{ and } \\lim a_n = B \\Rightarrow A = B",
+        "image": ":/data/formulas/limit_sequence/properties_1.png"
+      },
+      {
+        "type": "property",
+        "level": "rigorous",
+        "value": "Ограниченность: всякая сходящаяся последовательность ограничена.",
+        "latex": "\\exists M>0: \\forall n \\; |a_n|\\le M",
+        "image": ":/data/formulas/limit_sequence/properties_2.png"
+      },
+      {
+        "type": "property",
+        "level": "simplified",
+        "value": "Сходящаяся последовательность не может иметь два разных предела, и её члены не уходят в бесконечность."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Найти предел последовательности a_n = (2n+1)/(n-3)"
+      },
+      {
+        "type": "step",
+        "value": "1. Делим числитель и знаменатель на n (старшая степень):"
+      },
+      {
+        "type": "formula",
+        "latex": "a_n = \\frac{2 + \\frac{1}{n}}{1 - \\frac{3}{n}}",
+        "image": ":/data/formulas/limit_sequence/worked_examples_1.png"
+      },
+      {
+        "type": "step",
+        "value": "2. При n→∞ имеем 1/n → 0 и 3/n → 0, поэтому предел равен"
+      },
+      {
+        "type": "formula",
+        "latex": "\\lim_{n\\to\\infty} a_n = \\frac{2+0}{1-0} = 2",
+        "image": ":/data/formulas/limit_sequence/worked_examples_2.png"
+      },
+      {
+        "type": "interactive",
+        "component": "SequenceLimitSolver",
+        "description": "Вычислите предел другой последовательности: введите формулу для a_n"
+      }
+    ]
+  },
+  {
+    "id": "limit_function_intuitive",
+    "title": "Предел функции в точке: интуитивный подход",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "Число L называется пределом функции f(x) при x → a, если для любой последовательности {x_n} → a (x_n ≠ a) соответствующая последовательность значений {f(x_n)} сходится к L.",
+        "latex": "\\lim_{x\\to a}f(x)=L \\Leftrightarrow \\forall\\{x_n\\}\\to a, x_n\\neq a: \\; f(x_n)\\to L",
+        "image": ":/data/formulas/limit_function_intuitive/definition_1.png"
+      },
+      {
+        "type": "definition",
+        "level": "simplified",
+        "value": "Когда x подбирается очень близко к a (но не равен ему), значения f(x) стремятся к определённому числу L. Это и есть предел."
+      },
+      {
+        "type": "example",
+        "value": "Функция f(x) = (x²−1)/(x−1) при x→1 имеет предел 2, хотя в точке x=1 не определена.",
+        "latex": "\\lim_{x\\to1}\\frac{x^2-1}{x-1} = \\lim_{x\\to1}(x+1) = 2",
+        "image": ":/data/formulas/limit_function_intuitive/definition_2.png"
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Предел не зависит от значения функции в самой точке a (функция может быть там не определена)."
+      },
+      {
+        "type": "property",
+        "value": "Если предел существует, он определяется поведением функции в любой достаточно малой проколотой окрестности точки a."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Исследовать поведение f(x) = 2x+1 при x → 3"
+      },
+      {
+        "type": "step",
+        "value": "1. Построим таблицу значений, приближаясь к 3 слева и справа."
+      },
+      {
+        "type": "step",
+        "value": "2. Видим: f(2.9)=6.8, f(2.99)=6.98, f(3.01)=7.02, f(3.1)=7.2. Значения стремятся к 7."
+      },
+      {
+        "type": "step",
+        "value": "3. Интуитивно заключаем: lim_{x→3} (2x+1) = 7."
+      },
+      {
+        "type": "interactive",
+        "component": "FunctionApproachDemo",
+        "description": "Введите функцию и точку, наблюдайте за таблицей и анимацией"
+      }
+    ]
+  },
+  {
+    "id": "one_sided_limits",
+    "title": "Односторонние пределы",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "Левосторонний предел: lim_{x→a⁻} f(x) = L, если ∀ε>0 ∃δ>0: a−δ < x < a ⇒ |f(x)−L| < ε. Аналогично для правостороннего.",
+        "latex": "\\lim_{x\\to a^-}f(x)=L \\Leftrightarrow \\forall\\varepsilon>0\\;\\exists\\delta>0: a-\\delta<x<a \\Rightarrow |f(x)-L|<\\varepsilon",
+        "image": ":/data/formulas/one_sided_limits/definition_1.png"
+      },
+      {
+        "type": "definition",
+        "level": "simplified",
+        "value": "Смотрим, куда стремится функция, когда x подходит к a только слева (x < a) или только справа (x > a)."
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "level": "rigorous",
+        "value": "Двусторонний предел существует тогда и только тогда, когда оба односторонних существуют и равны.",
+        "latex": "\\lim_{x\\to a}f(x)=L \\Leftrightarrow \\lim_{x\\to a^-}f(x)=\\lim_{x\\to a^+}f(x)=L",
+        "image": ":/data/formulas/one_sided_limits/properties_1.png"
+      },
+      {
+        "type": "example",
+        "value": "Для сигнум-функции sgn(x) левый предел в 0 равен −1, правый +1, поэтому предела в 0 нет.",
+        "latex": "\\lim_{x\\to0^-}\\operatorname{sgn}(x)=-1,\\; \\lim_{x\\to0^+}\\operatorname{sgn}(x)=1",
+        "image": ":/data/formulas/one_sided_limits/properties_2.png"
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Найти односторонние пределы f(x) = |x|/x при x→0"
+      },
+      {
+        "type": "step",
+        "value": "1. Для x<0: |x| = −x, тогда f(x) = (−x)/x = −1. Следовательно, левосторонний предел = −1."
+      },
+      {
+        "type": "step",
+        "value": "2. Для x>0: |x| = x, f(x) = x/x = 1. Правосторонний предел = 1."
+      },
+      {
+        "type": "step",
+        "value": "3. Поскольку левый и правый пределы разные, двусторонний предел не существует."
+      },
+      {
+        "type": "interactive",
+        "component": "OneSidedLimitDemo",
+        "description": "Двигайте точку к a слева и справа и наблюдайте за значениями"
+      }
+    ]
+  },
+  {
+    "id": "epsilon_delta",
+    "title": "Формальное определение предела функции (ε-δ)",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "lim_{x→a} f(x) = L: ∀ ε > 0 ∃ δ > 0 такое, что для всех x с условием 0 < |x−a| < δ выполняется |f(x)−L| < ε.",
+        "latex": "\\forall\\varepsilon>0\\;\\exists\\delta>0:\\; 0<|x-a|<\\delta \\Rightarrow |f(x)-L|<\\varepsilon",
+        "image": ":/data/formulas/epsilon_delta/definition_1.png"
+      },
+      {
+        "type": "definition",
+        "level": "simplified",
+        "value": "Какую бы узкую горизонтальную полоску вокруг L мы ни взяли (ε), можно подобрать такое δ, что весь график над проколотой δ-окрестностью точки a поместится в эту полоску."
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Выбор δ зависит от ε и, вообще говоря, от точки a."
+      },
+      {
+        "type": "property",
+        "value": "Определение не требует знания f(a); точка a может даже не входить в область определения."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Доказать по определению, что lim_{x→2} (3x−1) = 5"
+      },
+      {
+        "type": "step",
+        "value": "1. Фиксируем произвольное ε > 0. Ищем δ > 0 такое, что из 0<|x−2|<δ следует |(3x−1)−5| < ε."
+      },
+      {
+        "type": "step",
+        "value": "2. Упрощаем: |3x−6| = 3|x−2| < ε ⇒ |x−2| < ε/3."
+      },
+      {
+        "type": "step",
+        "value": "3. Выбираем δ = ε/3. Тогда при 0<|x−2|<δ получаем требуемое неравенство."
+      },
+      {
+        "type": "interactive",
+        "component": "EpsilonDeltaTrainer",
+        "description": "Двигайте ε и наблюдайте, как меняется допустимое δ для разных функций"
+      }
+    ]
+  },
+  {
+    "id": "infinite_limits_asymptotes",
+    "title": "Бесконечные пределы и вертикальные асимптоты",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "lim_{x→a} f(x) = +∞, если ∀ M > 0 ∃ δ > 0: 0 < |x−a| < δ ⇒ f(x) > M.",
+        "latex": "\\lim_{x\\to a}f(x)=+\\infty \\Leftrightarrow \\forall M>0\\;\\exists\\delta>0: 0<|x-a|<\\delta \\Rightarrow f(x)>M",
+        "image": ":/data/formulas/infinite_limits_asymptotes/definition_1.png"
+      },
+      {
+        "type": "definition",
+        "level": "simplified",
+        "value": "Значения функции становятся неограниченно большими по модулю при приближении x к a. Прямая x = a — вертикальная асимптота."
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Аналогично определяются lim f(x) = −∞ и односторонние бесконечные пределы."
+      },
+      {
+        "type": "property",
+        "value": "Если хотя бы один из односторонних пределов бесконечен, прямая x = a является вертикальной асимптотой."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Исследовать поведение f(x) = 1/x² при x → 0"
+      },
+      {
+        "type": "step",
+        "value": "1. При x → 0 знаменатель стремится к 0, числитель постоянен — дробь неограниченно растёт."
+      },
+      {
+        "type": "step",
+        "value": "2. Для любого M>0 можно взять δ = 1/√M, тогда из 0<|x|<δ следует 1/x² > M."
+      },
+      {
+        "type": "step",
+        "value": "3. Следовательно, lim_{x→0} 1/x² = +∞, и x=0 — вертикальная асимптота."
+      },
+      {
+        "type": "interactive",
+        "component": "AsymptoteDemo",
+        "description": "Приближайте x к особой точке и наблюдайте за уходом графика в бесконечность"
+      }
+    ]
+  },
+  {
+    "id": "limits_at_infinity",
+    "title": "Пределы на бесконечности и горизонтальные асимптоты",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "lim_{x→+∞} f(x) = L, если ∀ ε > 0 ∃ X > 0: x > X ⇒ |f(x)−L| < ε.",
+        "latex": "\\lim_{x\\to+\\infty}f(x)=L \\Leftrightarrow \\forall\\varepsilon>0\\;\\exists X>0: x>X \\Rightarrow |f(x)-L|<\\varepsilon",
+        "image": ":/data/formulas/limits_at_infinity/definition_1.png"
+      },
+      {
+        "type": "definition",
+        "level": "simplified",
+        "value": "При очень больших x значения функции стабилизируются около числа L. Прямая y = L — горизонтальная асимптота."
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Аналогично определяется предел при x → −∞."
+      },
+      {
+        "type": "property",
+        "value": "Если lim_{x→±∞} f(x) = L, то прямая y = L — горизонтальная асимптота. Если lim_{x→±∞} f(x)/x = k ≠ 0, может существовать наклонная асимптота."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Найти предел lim_{x→+∞} (3x²+2x)/(x²−5)"
+      },
+      {
+        "type": "step",
+        "value": "1. Делим числитель и знаменатель на x²:"
+      },
+      {
+        "type": "formula",
+        "latex": "\\frac{3 + \\frac{2}{x}}{1 - \\frac{5}{x^2}}",
+        "image": ":/data/formulas/limits_at_infinity/worked_examples_1.png"
+      },
+      {
+        "type": "step",
+        "value": "2. При x→+∞ слагаемые 2/x и 5/x² стремятся к 0."
+      },
+      {
+        "type": "formula",
+        "latex": "\\lim_{x\\to+\\infty} = \\frac{3+0}{1-0} = 3",
+        "image": ":/data/formulas/limits_at_infinity/worked_examples_2.png"
+      },
+      {
+        "type": "step",
+        "value": "3. Горизонтальная асимптота: y = 3."
+      },
+      {
+        "type": "interactive",
+        "component": "InfinityLimitDemo",
+        "description": "Масштабируйте график для изучения поведения на бесконечности"
+      }
+    ]
+  },
+  {
+    "id": "limit_arithmetic",
+    "title": "Основные теоремы о пределах (арифметика пределов)",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "Если существуют конечные пределы lim f(x)=A и lim g(x)=B, то: lim (f±g) = A±B, lim (f·g) = A·B, lim (f/g) = A/B (при B≠0).",
+        "latex": "\\lim (f\\pm g) = \\lim f \\pm \\lim g,\\; \\lim (f\\cdot g)=\\lim f \\cdot \\lim g,\\; \\lim \\frac{f}{g}=\\frac{\\lim f}{\\lim g} \\;(\\lim g\\ne 0)",
+        "image": ":/data/formulas/limit_arithmetic/definition_1.png"
+      },
+      {
+        "type": "definition",
+        "level": "simplified",
+        "value": "Предел суммы есть сумма пределов, предел произведения — произведение пределов и т.д., если каждый предел существует и в частном знаменатель не обнуляется."
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Константу можно выносить за знак предела: lim (c·f) = c·lim f."
+      },
+      {
+        "type": "property",
+        "value": "Предел степенной функции: lim (x^n) = a^n (для целых n)."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Вычислить lim_{x→2} (x³ + 4x - 1)"
+      },
+      {
+        "type": "step",
+        "value": "1. Функция непрерывна (многочлен), поэтому предел равен значению в точке: 2³ + 4·2 − 1 = 8+8−1 = 15."
+      },
+      {
+        "type": "example_title",
+        "value": "Вычислить lim_{x→1} (x²−1)/(x−1)"
+      },
+      {
+        "type": "step",
+        "value": "1. Подстановка даёт 0/0. Раскладываем числитель: (x−1)(x+1)/(x−1) = x+1."
+      },
+      {
+        "type": "step",
+        "value": "2. При x→1 получаем 2."
+      },
+      {
+        "type": "interactive",
+        "component": "LimitArithmeticTrainer",
+        "description": "Применяйте теоремы к разным выражениям"
+      }
+    ]
+  },
+  {
+    "id": "solving_indeterminate_forms",
+    "title": "Техника вычисления пределов: раскрытие неопределённостей",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "Неопределённости: 0/0, ∞/∞, 0·∞, ∞−∞, 1^∞, 0^0, ∞^0. Требуют дополнительных преобразований для нахождения предела.",
+        "latex": "\\frac{0}{0},\\; \\frac{\\infty}{\\infty},\\; 0\\cdot\\infty,\\; \\infty-\\infty,\\; 1^\\infty,\\; 0^0,\\; \\infty^0",
+        "image": ":/data/formulas/solving_indeterminate_forms/definition_1.png"
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Основные приёмы: разложение на множители и сокращение, умножение на сопряжённое, деление на старшую степень, замена на эквивалентные бесконечно малые, правило Лопиталя (если изучено)."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Раскрыть неопределённость 0/0: lim_{x→4} (√x−2)/(x−4)"
+      },
+      {
+        "type": "step",
+        "value": "1. Умножаем числитель и знаменатель на сопряжённое (√x+2):"
+      },
+      {
+        "type": "formula",
+        "latex": "\\frac{(\\sqrt{x}-2)(\\sqrt{x}+2)}{(x-4)(\\sqrt{x}+2)} = \\frac{x-4}{(x-4)(\\sqrt{x}+2)} = \\frac{1}{\\sqrt{x}+2}",
+        "image": ":/data/formulas/solving_indeterminate_forms/worked_examples_1.png"
+      },
+      {
+        "type": "step",
+        "value": "2. Подставляем x=4: 1/(2+2) = 1/4."
+      },
+      {
+        "type": "interactive",
+        "component": "IndeterminateSolver",
+        "description": "Введите пример с неопределённостью и получите пошаговое решение"
+      }
+    ]
+  },
+  {
+    "id": "squeeze_theorem",
+    "title": "Теорема о сжатии (о двух милиционерах)",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "Если g(x) ≤ f(x) ≤ h(x) в некоторой проколотой окрестности точки a и lim_{x→a} g(x) = lim_{x→a} h(x) = L, то lim_{x→a} f(x) = L.",
+        "latex": "g(x)\\le f(x)\\le h(x),\\; \\lim g = \\lim h = L \\Rightarrow \\lim f = L",
+        "image": ":/data/formulas/squeeze_theorem/definition_1.png"
+      },
+      {
+        "type": "definition",
+        "level": "simplified",
+        "value": "Если функция «зажата» между двумя другими, имеющими общий предел, то она вынуждена иметь тот же предел."
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Особенно полезна, когда прямое вычисление предела затруднительно, но легко найти оценки сверху и снизу."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Найти lim_{x→0} x² sin(1/x)"
+      },
+      {
+        "type": "step",
+        "value": "1. Заметим: −1 ≤ sin(1/x) ≤ 1, тогда −x² ≤ x² sin(1/x) ≤ x²."
+      },
+      {
+        "type": "step",
+        "value": "2. lim_{x→0} (−x²) = 0 и lim_{x→0} x² = 0."
+      },
+      {
+        "type": "step",
+        "value": "3. По теореме о сжатии исходный предел также равен 0."
+      },
+      {
+        "type": "interactive",
+        "component": "SqueezeDemo",
+        "description": "Визуализация трёх функций: две ограничивающие и зажатая между ними"
+      }
+    ]
+  },
+  {
+    "id": "first_remarkable_limit",
+    "title": "Первый замечательный предел и тригонометрические пределы",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "lim_{x→0} sin(x)/x = 1. Доказывается через геометрические неравенства: sin x < x < tg x для x∈(0,π/2).",
+        "latex": "\\lim_{x\\to 0}\\frac{\\sin x}{x}=1",
+        "image": ":/data/formulas/first_remarkable_limit/definition_1.png"
+      },
+      {
+        "type": "example",
+        "value": "Следствия: lim_{x→0} tg(x)/x = 1, lim_{x→0} (1−cos x)/x² = 1/2."
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Позволяет раскрывать неопределённость 0/0 с тригонометрическими функциями."
+      },
+      {
+        "type": "property",
+        "value": "Обобщение: lim_{x→0} sin(ax)/(bx) = a/b, если a, b — константы."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Вычислить lim_{x→0} sin(5x)/x"
+      },
+      {
+        "type": "step",
+        "value": "1. Умножаем и делим на 5: lim_{x→0} (5·sin(5x))/(5x) = 5·lim_{x→0} sin(5x)/(5x)."
+      },
+      {
+        "type": "step",
+        "value": "2. Обозначим u = 5x, при x→0, u→0, тогда lim_{u→0} sin(u)/u = 1."
+      },
+      {
+        "type": "formula",
+        "latex": "\\lim_{x\\to 0}\\frac{\\sin 5x}{x} = 5\\cdot 1 = 5",
+        "image": ":/data/formulas/first_remarkable_limit/worked_examples_1.png"
+      },
+      {
+        "type": "interactive",
+        "component": "FirstLimitPractice",
+        "description": "Потренируйтесь сводить выражения к первому замечательному пределу"
+      }
+    ]
+  },
+  {
+    "id": "second_remarkable_limit",
+    "title": "Второй замечательный предел и число e",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "lim_{x→∞} (1 + 1/x)^x = e, а также lim_{x→0} (1 + x)^{1/x} = e.",
+        "latex": "\\lim_{x\\to\\infty}\\left(1+\\frac{1}{x}\\right)^x = e,\\; \\lim_{x\\to 0}(1+x)^{1/x}=e",
+        "image": ":/data/formulas/second_remarkable_limit/definition_1.png"
+      },
+      {
+        "type": "example",
+        "value": "Число e ≈ 2.71828... является основанием натурального логарифма."
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Позволяет вычислять пределы вида 1^∞. Общий случай: lim (1 + α)^(1/α) = e при α → 0."
+      },
+      {
+        "type": "property",
+        "value": "Следствия: lim_{x→0} ln(1+x)/x = 1, lim_{x→0} (e^x−1)/x = 1."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Найти lim_{x→∞} (1 + 2/x)^x"
+      },
+      {
+        "type": "step",
+        "value": "1. Приводим к виду (1 + 1/u)^u, выделив в показателе нужный коэффициент."
+      },
+      {
+        "type": "step",
+        "value": "2. Запишем: (1 + 2/x)^x = [(1 + 2/x)^{x/2}]^2."
+      },
+      {
+        "type": "step",
+        "value": "3. При x→∞, u = x/2 → ∞, выражение в скобках стремится к e. Ответ: e²."
+      },
+      {
+        "type": "interactive",
+        "component": "SecondLimitDemo",
+        "description": "Экспериментируйте: приближайте x к бесконечности и смотрите, как выражение сходится к e"
+      }
+    ]
+  },
+  {
+    "id": "continuity",
+    "title": "Непрерывность функции",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "Функция f непрерывна в точке a, если lim_{x→a} f(x) = f(a). Это означает: f определена в a, предел существует и равен значению.",
+        "latex": "\\lim_{x\\to a} f(x) = f(a)",
+        "image": ":/data/formulas/continuity/definition_1.png"
+      },
+      {
+        "type": "definition",
+        "level": "simplified",
+        "value": "График непрерывной функции можно нарисовать, не отрывая карандаша от бумаги."
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Точки разрыва классифицируются: устранимый разрыв (предел есть, но не равен f(a)), разрыв первого рода (скачок), разрыв второго рода (бесконечный или существенный)."
+      },
+      {
+        "type": "property",
+        "value": "Сумма, произведение, композиция непрерывных функций непрерывны. Элементарные функции непрерывны на своей области определения."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Исследовать непрерывность f(x) = { x² при x≠2, 5 при x=2 }"
+      },
+      {
+        "type": "step",
+        "value": "1. Находим предел при x→2: lim_{x→2} x² = 4."
+      },
+      {
+        "type": "step",
+        "value": "2. f(2) = 5, что не равно 4. Следовательно, в точке x=2 устранимый разрыв (если переопределить f(2)=4, функция станет непрерывной)."
+      },
+      {
+        "type": "interactive",
+        "component": "ContinuityDemo",
+        "description": "Исследуйте графики и классифицируйте точки разрыва"
+      }
+    ]
+  },
+  {
+    "id": "infinitesimal_comparison",
+    "title": "Сравнение бесконечно малых и эквивалентные функции",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "Функции α(x) и β(x) называются эквивалентными при x→a (α ~ β), если lim α(x)/β(x) = 1.",
+        "latex": "\\alpha(x)\\sim\\beta(x) \\Leftrightarrow \\lim_{x\\to a}\\frac{\\alpha}{\\beta}=1",
+        "image": ":/data/formulas/infinitesimal_comparison/definition_1.png"
+      },
+      {
+        "type": "definition",
+        "level": "simplified",
+        "value": "Две бесконечно малые эквивалентны, если их отношение стремится к 1; это значит, что они «одинаково быстро» стремятся к нулю."
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Таблица эквивалентностей при x→0: sin x ~ x, tg x ~ x, arcsin x ~ x, ln(1+x) ~ x, e^x−1 ~ x, (1+x)^α−1 ~ αx."
+      },
+      {
+        "type": "property",
+        "value": "В произведении и частном бесконечно малые можно заменять на эквивалентные; в сумме и разности — нельзя без проверки."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Вычислить lim_{x→0} (e^{3x}−1)/(sin 2x)"
+      },
+      {
+        "type": "step",
+        "value": "1. При x→0: e^{3x}−1 ~ 3x, sin 2x ~ 2x."
+      },
+      {
+        "type": "step",
+        "value": "2. Заменяем: lim (3x)/(2x) = 3/2."
+      },
+      {
+        "type": "interactive",
+        "component": "EquivalentFunctionsTrainer",
+        "description": "Выберите правильную замену из таблицы эквивалентностей"
+      }
+    ]
+  },
+  {
+    "id": "lhopital_rule",
+    "title": "Правило Лопиталя",
+    "definitions": [
+      {
+        "type": "definition",
+        "level": "rigorous",
+        "value": "Если функции f и g дифференцируемы в окрестности a, lim f = lim g = 0 (или ∞) и существует предел отношения производных, то lim f/g = lim f'/g'.",
+        "latex": "\\lim_{x\\to a}\\frac{f}{g} = \\lim_{x\\to a}\\frac{f'}{g'}",
+        "image": ":/data/formulas/lhopital_rule/definition_1.png"
+      }
+    ],
+    "properties": [
+      {
+        "type": "property",
+        "value": "Применимо только к неопределённостям 0/0 или ∞/∞. Может применяться несколько раз подряд."
+      },
+      {
+        "type": "property",
+        "value": "Необходима проверка условий: дифференцируемость, g'(x) ≠ 0 вблизи a."
+      }
+    ],
+    "worked_examples": [
+      {
+        "type": "example_title",
+        "value": "Найти lim_{x→0} (1−cos x)/x²"
+      },
+      {
+        "type": "step",
+        "value": "1. Подстановка даёт 0/0. Применяем правило Лопиталя: дифференцируем числитель и знаменатель."
+      },
+      {
+        "type": "formula",
+        "latex": "\\lim_{x\\to0}\\frac{\\sin x}{2x} = \\frac{1}{2}\\lim_{x\\to0}\\frac{\\sin x}{x} = \\frac{1}{2}",
+        "image": ":/data/formulas/lhopital_rule/worked_examples_1.png"
+      },
+      {
+        "type": "step",
+        "value": "2. Здесь после первого применения снова возникла неопределённость 0/0, но мы уже знаем первый замечательный предел."
+      },
+      {
+        "type": "interactive",
+        "component": "LHopitalDemo",
+        "description": "Примените правило Лопиталя по шагам и сравните с другими методами"
+      }
+    ]
+  }
+]

@@ -1,0 +1,39 @@
+<RCC>
+    <qresource prefix="/topics">
+        <file>data/topics.json</file>
+        <file>data/theory.json</file>
+        <file>data/practice.json</file>
+    </qresource>
+    <qresource prefix="/mathjax">
+        <file>data/tex-chtml.js</file>
+    </qresource>
+    <qresource prefix="/data">
+        <file>formulas/continuity/definition_1.png</file>
+        <file>formulas/epsilon_delta/definition_1.png</file>
+        <file>formulas/first_remarkable_limit/definition_1.png</file>
+        <file>formulas/first_remarkable_limit/worked_examples_1.png</file>
+        <file>formulas/infinite_limits_asymptotes/definition_1.png</file>
+        <file>formulas/infinitesimal_comparison/definition_1.png</file>
+        <file>formulas/lhopital_rule/definition_1.png</file>
+        <file>formulas/lhopital_rule/worked_examples_1.png</file>
+        <file>formulas/limit_arithmetic/definition_1.png</file>
+        <file>formulas/limit_function_intuitive/definition_1.png</file>
+        <file>formulas/limit_function_intuitive/definition_2.png</file>
+        <file>formulas/limit_sequence/definition_1.png</file>
+        <file>formulas/limit_sequence/definition_2.png</file>
+        <file>formulas/limit_sequence/properties_1.png</file>
+        <file>formulas/limit_sequence/properties_2.png</file>
+        <file>formulas/limit_sequence/worked_examples_1.png</file>
+        <file>formulas/limit_sequence/worked_examples_2.png</file>
+        <file>formulas/limits_at_infinity/definition_1.png</file>
+        <file>formulas/limits_at_infinity/worked_examples_1.png</file>
+        <file>formulas/limits_at_infinity/worked_examples_2.png</file>
+        <file>formulas/one_sided_limits/definition_1.png</file>
+        <file>formulas/one_sided_limits/properties_1.png</file>
+        <file>formulas/one_sided_limits/properties_2.png</file>
+        <file>formulas/second_remarkable_limit/definition_1.png</file>
+        <file>formulas/solving_indeterminate_forms/definition_1.png</file>
+        <file>formulas/solving_indeterminate_forms/worked_examples_1.png</file>
+        <file>formulas/squeeze_theorem/definition_1.png</file>
+    </qresource>
+</RCC>

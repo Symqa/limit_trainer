@@ -1,0 +1,648 @@
+[
+  {
+    "id": "limit_sequence",
+    "title": "Предел числовой последовательности",
+    "exercises": [
+      {
+        "id": "seq_easy_01",
+        "difficulty": "easy",
+        "question_text": "Чему равен предел последовательности \\(a_n = \\frac{1}{n}\\) при \\(n \\to \\infty\\)?",
+        "options": ["0", "1", "∞", "−1"],
+        "correct_index": 0,
+        "explanation": "При неограниченном росте n дробь 1/n становится сколь угодно близкой к нулю."
+      },
+      {
+        "id": "seq_easy_02",
+        "difficulty": "easy",
+        "question_text": "Предел постоянной последовательности \\(a_n = 5\\) равен:",
+        "options": ["5", "0", "∞", "не существует"],
+        "correct_index": 0,
+        "explanation": "Постоянная последовательность всегда равна одному и тому же числу, её предел равен этому числу."
+      },
+      {
+        "id": "seq_easy_03",
+        "difficulty": "easy",
+        "question_text": "Если \\(\\lim a_n = 3\\) и \\(\\lim b_n = 2\\), то \\(\\lim (a_n + b_n)\\) равен:",
+        "options": ["5", "6", "1", "3"],
+        "correct_index": 0,
+        "explanation": "По теореме о сумме пределов: предел суммы равен сумме пределов."
+      },
+      {
+        "id": "seq_medium_01",
+        "difficulty": "medium",
+        "question_text": "Найдите предел последовательности \\(a_n = \\frac{2n+1}{n}\\).",
+        "options": ["2", "1", "∞", "0"],
+        "correct_index": 0,
+        "explanation": "Разделим числитель и знаменатель на n: (2 + 1/n) / 1 → 2 при n→∞."
+      },
+      {
+        "id": "seq_medium_02",
+        "difficulty": "medium",
+        "question_text": "Предел последовательности \\(a_n = \\frac{n^2-1}{2n^2+3}\\) равен:",
+        "options": ["1/2", "1", "0", "∞"],
+        "correct_index": 0,
+        "explanation": "Делим на старшую степень n²: (1 − 1/n²) / (2 + 3/n²) → 1/2."
+      },
+      {
+        "id": "seq_hard_01",
+        "difficulty": "hard",
+        "question_text": "Вычислите предел \\(\\lim_{n\\to\\infty} \\left(\\sqrt{n^2+n} - n\\right)\\).",
+        "options": ["1/2", "0", "1", "∞"],
+        "correct_index": 0,
+        "explanation": "Умножаем на сопряжённое: ( (n²+n) − n² ) / (√(n²+n) + n) = n / (√(n²+n) + n) → 1/2."
+      },
+      {
+        "id": "seq_hard_02",
+        "difficulty": "hard",
+        "question_text": "Вставьте пропущенное слово: «Сходящаяся последовательность обязательно является ________.»",
+        "options": ["ограниченной", "монотонной", "неограниченной", "знакопеременной"],
+        "correct_index": 0,
+        "explanation": "Всякая сходящаяся последовательность ограничена. Обратное неверно."
+      }
+    ]
+  },
+  {
+    "id": "limit_function_intuitive",
+    "title": "Предел функции в точке: интуитивный подход",
+    "exercises": [
+      {
+        "id": "func_easy_01",
+        "difficulty": "easy",
+        "question_text": "Если \\(f(x)=2x+1\\), то \\(\\lim_{x\\to 3} f(x)\\) равен:",
+        "options": ["7", "3", "1", "6"],
+        "correct_index": 0,
+        "explanation": "Просто подставляем x=3 в непрерывную функцию: 2·3+1=7."
+      },
+      {
+        "id": "func_easy_02",
+        "difficulty": "easy",
+        "question_text": "Предел функции в точке зависит от:",
+        "options": [
+          "поведения функции вблизи точки",
+          "значения функции в самой точке",
+          "только от левого предела",
+          "только от правого предела"
+        ],
+        "correct_index": 0,
+        "explanation": "Предел характеризует поведение функции в окрестности точки, а не в самой точке."
+      },
+      {
+        "id": "func_medium_01",
+        "difficulty": "medium",
+        "question_text": "Вычислите \\(\\lim_{x\\to 1}\\frac{x^2-1}{x-1}\\).",
+        "options": ["2", "1", "0", "не существует"],
+        "correct_index": 0,
+        "explanation": "Сокращаем (x−1)(x+1)/(x−1) = x+1 → 2 при x→1."
+      },
+      {
+        "id": "func_medium_02",
+        "difficulty": "medium",
+        "question_text": "Если \\(\\lim_{x\\to a} f(x) = L\\) и \\(f(a)\\) не определено, то:",
+        "options": [
+          "предел всё равно может существовать",
+          "предел не существует",
+          "L = 0",
+          "функция обязательно разрывна в a"
+        ],
+        "correct_index": 0,
+        "explanation": "Предел не зависит от значения в самой точке; функция может быть не определена, но предел существовать."
+      },
+      {
+        "id": "func_hard_01",
+        "difficulty": "hard",
+        "question_text": "Для какой функции предел в точке 0 не существует?",
+        "options": [
+          "\\(f(x)=\\sin\\frac{1}{x}\\)",
+          "\\(f(x)=x^2\\)",
+          "\\(f(x)=|x|\\)",
+          "\\(f(x)=e^x\\)"
+        ],
+        "correct_index": 0,
+        "explanation": "sin(1/x) осциллирует между -1 и 1, не приближаясь к какому-либо одному числу."
+      }
+    ]
+  },
+  {
+    "id": "one_sided_limits",
+    "title": "Односторонние пределы",
+    "exercises": [
+      {
+        "id": "osl_easy_01",
+        "difficulty": "easy",
+        "question_text": "Левосторонний предел \\(\\lim_{x\\to 0^-} \\frac{|x|}{x}\\) равен:",
+        "options": ["-1", "1", "0", "не существует"],
+        "correct_index": 0,
+        "explanation": "При x<0 модуль |x| = −x, поэтому (−x)/x = −1."
+      },
+      {
+        "id": "osl_easy_02",
+        "difficulty": "easy",
+        "question_text": "Правосторонний предел \\(\\lim_{x\\to 0^+} \\frac{|x|}{x}\\) равен:",
+        "options": ["1", "-1", "0", "∞"],
+        "correct_index": 0,
+        "explanation": "При x>0 модуль |x| = x, поэтому x/x = 1."
+      },
+      {
+        "id": "osl_medium_01",
+        "difficulty": "medium",
+        "question_text": "Дана функция \\(f(x) = \\begin{cases} x+1, & x<2 \\\\ 3, & x\\ge 2 \\end{cases}\\). Чему равен \\(\\lim_{x\\to 2^-} f(x)\\)?",
+        "options": ["3", "2", "1", "4"],
+        "correct_index": 0,
+        "explanation": "Левее 2 функция равна x+1, и при x→2− она стремится к 3."
+      },
+      {
+        "id": "osl_medium_02",
+        "difficulty": "medium",
+        "question_text": "Если \\(\\lim_{x\\to a^-}f(x) = 5\\) и \\(\\lim_{x\\to a^+}f(x) = 5\\), то двусторонний предел:",
+        "options": ["равен 5", "не существует", "равен 0", "равен 10"],
+        "correct_index": 0,
+        "explanation": "Двусторонний предел существует и равен общему значению односторонних."
+      },
+      {
+        "id": "osl_hard_01",
+        "difficulty": "hard",
+        "question_text": "Вставьте пропущенное слово: «Если левосторонний и правосторонний пределы различны, то двусторонний предел ________.»",
+        "options": ["не существует", "равен их сумме", "равен их произведению", "равен полусумме"],
+        "correct_index": 0,
+        "explanation": "Двусторонний предел существует только когда односторонние совпадают."
+      }
+    ]
+  },
+  {
+    "id": "epsilon_delta",
+    "title": "Формальное определение предела функции (ε-δ)",
+    "exercises": [
+      {
+        "id": "eps_easy_01",
+        "difficulty": "easy",
+        "question_text": "В определении предела \\(\\lim_{x\\to a} f(x)=L\\) число ε должно быть:",
+        "options": ["любое положительное", "целое", "отрицательное", "натуральное"],
+        "correct_index": 0,
+        "explanation": "В определении требуется, чтобы для любого ε>0 нашлось δ>0."
+      },
+      {
+        "id": "eps_easy_02",
+        "difficulty": "easy",
+        "question_text": "Символ δ в определении предела обозначает:",
+        "options": [
+          "радиус проколотой окрестности точки a",
+          "радиус окрестности предела L",
+          "значение функции",
+          "точку, к которой стремится x"
+        ],
+        "correct_index": 0,
+        "explanation": "δ задаёт величину окрестности вокруг a, из которой берутся x."
+      },
+      {
+        "id": "eps_medium_01",
+        "difficulty": "medium",
+        "question_text": "Дано: \\(\\forall \\varepsilon>0\\ \\exists \\delta>0: 0<|x-2|<\\delta \\Rightarrow |(3x-1)-5|<\\varepsilon\\). Это означает, что предел:",
+        "options": ["\\(\\lim_{x\\to 2}(3x-1)=5\\)", "\\(\\lim_{x\\to 2}(3x-1)=2\\)", "\\(\\lim_{x\\to 5}(3x-1)=2\\)", "предела не существует"],
+        "correct_index": 0,
+        "explanation": "Данное утверждение в точности повторяет ε-δ определение предела для f(x)=3x-1, a=2, L=5."
+      },
+      {
+        "id": "eps_hard_01",
+        "difficulty": "hard",
+        "question_text": "Для доказательства \\(\\lim_{x\\to 1}(2x+1)=3\\) по определению, какое δ можно выбрать по заданному ε?",
+        "options": ["δ = ε/2", "δ = ε", "δ = 2ε", "δ = ε²"],
+        "correct_index": 0,
+        "explanation": "|(2x+1)-3| = 2|x-1| < ε ⇒ |x-1| < ε/2, поэтому δ = ε/2."
+      }
+    ]
+  },
+  {
+    "id": "infinite_limits_asymptotes",
+    "title": "Бесконечные пределы и вертикальные асимптоты",
+    "exercises": [
+      {
+        "id": "inf_easy_01",
+        "difficulty": "easy",
+        "question_text": "Вертикальная асимптота графика \\(y=1/(x-2)\\) — это прямая:",
+        "options": ["x = 2", "y = 2", "x = 0", "y = 0"],
+        "correct_index": 0,
+        "explanation": "При x=2 знаменатель обращается в ноль, функция стремится к бесконечности."
+      },
+      {
+        "id": "inf_easy_02",
+        "difficulty": "easy",
+        "question_text": "Если \\(\\lim_{x\\to a}f(x)=\\infty\\), то говорят, что функция имеет:",
+        "options": ["бесконечный предел", "конечный предел", "нулевой предел", "разрыв первого рода"],
+        "correct_index": 0,
+        "explanation": "Бесконечный предел означает неограниченное возрастание функции при приближении к a."
+      },
+      {
+        "id": "inf_medium_01",
+        "difficulty": "medium",
+        "question_text": "Вычислите \\(\\lim_{x\\to 0^+} \\frac{1}{x}\\).",
+        "options": ["+∞", "0", "1", "−∞"],
+        "correct_index": 0,
+        "explanation": "При x→0+ знаменатель мал, числитель постоянен, дробь неограниченно растёт."
+      },
+      {
+        "id": "inf_medium_02",
+        "difficulty": "medium",
+        "question_text": "Функция \\(f(x)=\\frac{1}{(x-1)^2}\\) имеет вертикальную асимптоту:",
+        "options": ["x = 1", "y = 1", "x = 0", "y = 0"],
+        "correct_index": 0,
+        "explanation": "Знаменатель обнуляется в x=1, при этом квадрат гарантирует положительность, но предел всё равно бесконечен."
+      },
+      {
+        "id": "inf_hard_01",
+        "difficulty": "hard",
+        "question_text": "Вставьте пропущенное: «Если \\(\\lim_{x\\to a}f(x)=\\infty\\), то прямая \\(x=a\\) называется _________ асимптотой.»",
+        "options": ["вертикальной", "горизонтальной", "наклонной", "касательной"],
+        "correct_index": 0,
+        "explanation": "Вертикальная асимптота возникает, когда предел в точке бесконечен."
+      }
+    ]
+  },
+  {
+    "id": "limits_at_infinity",
+    "title": "Пределы на бесконечности и горизонтальные асимптоты",
+    "exercises": [
+      {
+        "id": "lai_easy_01",
+        "difficulty": "easy",
+        "question_text": "Горизонтальная асимптота функции \\(f(x) = 1/x\\) при \\(x\\to\\infty\\):",
+        "options": ["y = 0", "x = 0", "y = 1", "y = ∞"],
+        "correct_index": 0,
+        "explanation": "При больших x значение 1/x стремится к 0, поэтому y=0 — горизонтальная асимптота."
+      },
+      {
+        "id": "lai_easy_02",
+        "difficulty": "easy",
+        "question_text": "Если \\(\\lim_{x\\to\\infty} f(x) = 3\\), то прямая \\(y=3\\) является:",
+        "options": ["горизонтальной асимптотой", "вертикальной асимптотой", "наклонной асимптотой", "касательной"],
+        "correct_index": 0,
+        "explanation": "Горизонтальная асимптота — это предел функции на бесконечности."
+      },
+      {
+        "id": "lai_medium_01",
+        "difficulty": "medium",
+        "question_text": "Вычислите \\(\\lim_{x\\to\\infty} \\frac{3x^2+2x}{x^2-5}\\).",
+        "options": ["3", "0", "∞", "2/5"],
+        "correct_index": 0,
+        "explanation": "Делим на x²: (3 + 2/x) / (1 - 5/x²) → 3/1 = 3."
+      },
+      {
+        "id": "lai_medium_02",
+        "difficulty": "medium",
+        "question_text": "Предел \\(\\lim_{x\\to -\\infty} e^x\\) равен:",
+        "options": ["0", "1", "∞", "−1"],
+        "correct_index": 0,
+        "explanation": "При x→−∞ показатель степени отрицателен и стремится к минус бесконечности, e^x → 0."
+      },
+      {
+        "id": "lai_hard_01",
+        "difficulty": "hard",
+        "question_text": "Функция \\(f(x) = \\frac{2x+1}{x-1}\\) имеет горизонтальную асимптоту:",
+        "options": ["y = 2", "y = 1", "y = 0", "x = 1"],
+        "correct_index": 0,
+        "explanation": "Делим на x: (2 + 1/x)/(1 - 1/x) → 2/1 = 2."
+      }
+    ]
+  },
+  {
+    "id": "limit_arithmetic",
+    "title": "Основные теоремы о пределах (арифметика пределов)",
+    "exercises": [
+      {
+        "id": "arith_easy_01",
+        "difficulty": "easy",
+        "question_text": "Если \\(\\lim f(x) = 2\\) и \\(\\lim g(x) = 3\\), то \\(\\lim (f(x) \\cdot g(x))\\) равен:",
+        "options": ["6", "5", "1", "2/3"],
+        "correct_index": 0,
+        "explanation": "Предел произведения равен произведению пределов."
+      },
+      {
+        "id": "arith_easy_02",
+        "difficulty": "easy",
+        "question_text": "Константу можно выносить за знак предела. \\(\\lim_{x\\to a} (5f(x)) = ?\\)",
+        "options": ["5 \\lim f(x)", "\\lim f(x)", "5", "0"],
+        "correct_index": 0,
+        "explanation": "Постоянный множитель выносится: lim(c·f) = c·lim f."
+      },
+      {
+        "id": "arith_medium_01",
+        "difficulty": "medium",
+        "question_text": "Вычислите \\(\\lim_{x\\to 1} (x^2 + 3x - 2)\\).",
+        "options": ["2", "1", "0", "4"],
+        "correct_index": 0,
+        "explanation": "Подставляем x=1: 1+3-2=2. Многочлен непрерывен."
+      },
+      {
+        "id": "arith_medium_02",
+        "difficulty": "medium",
+        "question_text": "Если \\(\\lim f(x) = 4\\) и \\(\\lim g(x) = 0\\), то \\(\\lim \\frac{f(x)}{g(x)}\\):",
+        "options": [
+          "может не существовать или быть бесконечным",
+          "равен 0",
+          "равен 4",
+          "всегда равен ∞"
+        ],
+        "correct_index": 0,
+        "explanation": "Если знаменатель стремится к нулю, предел частного может быть бесконечным или не существовать."
+      },
+      {
+        "id": "arith_hard_01",
+        "difficulty": "hard",
+        "question_text": "Известно, что \\(\\lim (f(x)+g(x))=5\\) и \\(\\lim (f(x)-g(x))=1\\). Чему равен \\(\\lim f(x)\\)?",
+        "options": ["3", "2", "5", "1"],
+        "correct_index": 0,
+        "explanation": "Сложим два равенства: 2 lim f(x) = 6 → lim f(x) = 3."
+      }
+    ]
+  },
+  {
+    "id": "solving_indeterminate_forms",
+    "title": "Техника вычисления пределов: раскрытие неопределённостей",
+    "exercises": [
+      {
+        "id": "indet_easy_01",
+        "difficulty": "easy",
+        "question_text": "Какая запись является неопределённостью?",
+        "options": ["0/0", "5/2", "1/0", "0/1"],
+        "correct_index": 0,
+        "explanation": "0/0 — классическая неопределённость, требующая дополнительных преобразований."
+      },
+      {
+        "id": "indet_medium_01",
+        "difficulty": "medium",
+        "question_text": "Раскройте неопределённость: \\(\\lim_{x\\to 4} \\frac{\\sqrt{x}-2}{x-4}\\).",
+        "options": ["1/4", "0", "1/2", "∞"],
+        "correct_index": 0,
+        "explanation": "Умножаем на сопряжённое: (x-4)/[(x-4)(√x+2)] = 1/(√x+2) → 1/4."
+      },
+      {
+        "id": "indet_medium_02",
+        "difficulty": "medium",
+        "question_text": "Неопределённость вида ∞/∞ можно раскрыть:",
+        "options": [
+          "делением на старшую степень",
+          "подстановкой предела",
+          "вынесением константы",
+          "только правилом Лопиталя"
+        ],
+        "correct_index": 0,
+        "explanation": "Деление числителя и знаменателя на старшую степень переменной — основной метод."
+      },
+      {
+        "id": "indet_hard_01",
+        "difficulty": "hard",
+        "question_text": "Вычислите \\(\\lim_{x\\to 0} \\frac{\\sqrt{1+x}-1}{x}\\).",
+        "options": ["1/2", "1", "0", "∞"],
+        "correct_index": 0,
+        "explanation": "Умножим на сопряжённое: (1+x-1)/[x(√(1+x)+1)] = 1/(√(1+x)+1) → 1/2."
+      }
+    ]
+  },
+  {
+    "id": "squeeze_theorem",
+    "title": "Теорема о сжатии (о двух милиционерах)",
+    "exercises": [
+      {
+        "id": "sqz_easy_01",
+        "difficulty": "easy",
+        "question_text": "Суть теоремы о сжатии: если \\(g(x) \\le f(x) \\le h(x)\\) и \\(\\lim g = \\lim h = L\\), то:",
+        "options": ["\\(\\lim f = L\\)", "\\(\\lim f = 0\\)", "\\(\\lim f = \\infty\\)", "предел f не существует"],
+        "correct_index": 0,
+        "explanation": "Функция f(x) «зажата» между g и h, имеющими одинаковый предел, поэтому и её предел равен L."
+      },
+      {
+        "id": "sqz_medium_01",
+        "difficulty": "medium",
+        "question_text": "Найдите \\(\\lim_{x\\to 0} x^2 \\sin(1/x)\\).",
+        "options": ["0", "1", "не существует", "∞"],
+        "correct_index": 0,
+        "explanation": "−x² ≤ x² sin(1/x) ≤ x², пределы крайних функций равны 0, значит, и средний 0."
+      },
+      {
+        "id": "sqz_medium_02",
+        "difficulty": "medium",
+        "question_text": "Если \\(-|x| \\le f(x) \\le |x|\\), то \\(\\lim_{x\\to 0} f(x)\\) равен:",
+        "options": ["0", "1", "−1", "не определён"],
+        "correct_index": 0,
+        "explanation": "Обе граничные функции стремятся к 0, поэтому по теореме о сжатии предел f(x)=0."
+      },
+      {
+        "id": "sqz_hard_01",
+        "difficulty": "hard",
+        "question_text": "Вставьте пропущенное: «Теорема о сжатии позволяет находить предел функции, даже если она ________.»",
+        "options": ["сильно осциллирует", "является многочленом", "непрерывна", "дифференцируема"],
+        "correct_index": 0,
+        "explanation": "Теорема особенно полезна для функций с колебаниями, например, содержащих sin(1/x)."
+      }
+    ]
+  },
+  {
+    "id": "first_remarkable_limit",
+    "title": "Первый замечательный предел и тригонометрические пределы",
+    "exercises": [
+      {
+        "id": "frl_easy_01",
+        "difficulty": "easy",
+        "question_text": "Первый замечательный предел — это \\(\\lim_{x\\to 0} \\frac{\\sin x}{x}\\) = ?",
+        "options": ["1", "0", "∞", "−1"],
+        "correct_index": 0,
+        "explanation": "Фундаментальный предел тригонометрии: sin(x)/x → 1 при x→0."
+      },
+      {
+        "id": "frl_medium_01",
+        "difficulty": "medium",
+        "question_text": "Вычислите \\(\\lim_{x\\to 0} \\frac{\\sin 5x}{x}\\).",
+        "options": ["5", "1", "0", "1/5"],
+        "correct_index": 0,
+        "explanation": "Умножаем и делим на 5: 5·sin(5x)/(5x) → 5·1 = 5."
+      },
+      {
+        "id": "frl_medium_02",
+        "difficulty": "medium",
+        "question_text": "\\(\\lim_{x\\to 0} \\frac{\\tg x}{x}\\) равен:",
+        "options": ["1", "0", "∞", "−1"],
+        "correct_index": 0,
+        "explanation": "tg x / x = (sin x / x) · (1 / cos x) → 1·1 = 1."
+      },
+      {
+        "id": "frl_hard_01",
+        "difficulty": "hard",
+        "question_text": "Вычислите \\(\\lim_{x\\to 0} \\frac{1-\\cos x}{x^2}\\).",
+        "options": ["1/2", "1", "0", "2"],
+        "correct_index": 0,
+        "explanation": "Используем формулу 1−cos x = 2 sin²(x/2) → 2·(x/2)² / x² = 1/2."
+      }
+    ]
+  },
+  {
+    "id": "second_remarkable_limit",
+    "title": "Второй замечательный предел и число e",
+    "exercises": [
+      {
+        "id": "srl_easy_01",
+        "difficulty": "easy",
+        "question_text": "Второй замечательный предел: \\(\\lim_{x\\to \\infty} \\left(1+\\frac{1}{x}\\right)^x\\) = ?",
+        "options": ["e", "1", "∞", "0"],
+        "correct_index": 0,
+        "explanation": "Это определение числа e."
+      },
+      {
+        "id": "srl_medium_01",
+        "difficulty": "medium",
+        "question_text": "Вычислите \\(\\lim_{x\\to 0} (1+x)^{1/x}\\).",
+        "options": ["e", "1", "0", "∞"],
+        "correct_index": 0,
+        "explanation": "Это эквивалентная форма второго замечательного предела."
+      },
+      {
+        "id": "srl_medium_02",
+        "difficulty": "medium",
+        "question_text": "Найдите \\(\\lim_{x\\to \\infty} \\left(1+\\frac{2}{x}\\right)^x\\).",
+        "options": ["e²", "e", "1", "2e"],
+        "correct_index": 0,
+        "explanation": "Приводим к виду ((1+2/x)^(x/2))² → e²."
+      },
+      {
+        "id": "srl_hard_01",
+        "difficulty": "hard",
+        "question_text": "Следствием второго замечательного предела является \\(\\lim_{x\\to 0} \\frac{\\ln(1+x)}{x}\\) = ?",
+        "options": ["1", "e", "0", "∞"],
+        "correct_index": 0,
+        "explanation": "ln(1+x)/x = ln((1+x)^(1/x)) → ln e = 1."
+      }
+    ]
+  },
+  {
+    "id": "continuity",
+    "title": "Непрерывность функции",
+    "exercises": [
+      {
+        "id": "cont_easy_01",
+        "difficulty": "easy",
+        "question_text": "Функция непрерывна в точке a, если:",
+        "options": [
+          "\\(\\lim_{x\\to a} f(x) = f(a)\\)",
+          "\\(f(a)\\) существует",
+          "предел существует",
+          "\\(f(x)\\) определена везде"
+        ],
+        "correct_index": 0,
+        "explanation": "Непрерывность означает совпадение предела и значения функции в точке."
+      },
+      {
+        "id": "cont_medium_01",
+        "difficulty": "medium",
+        "question_text": "Какая функция имеет устранимый разрыв в точке x=1?",
+        "options": [
+          "\\(f(x) = \\frac{x^2-1}{x-1}\\)",
+          "\\(f(x) = \\frac{1}{x-1}\\)",
+          "\\(f(x) = \\sin x\\)",
+          "\\(f(x) = |x|\\)"
+        ],
+        "correct_index": 0,
+        "explanation": "При x≠1 функция равна x+1, предел равен 2, но f(1) не определена. Если доопределить f(1)=2, разрыв исчезает."
+      },
+      {
+        "id": "cont_medium_02",
+        "difficulty": "medium",
+        "question_text": "Если функция имеет разрыв первого рода в точке a, то:",
+        "options": [
+          "односторонние пределы конечны, но не равны",
+          "один из пределов бесконечен",
+          "функция не определена в a",
+          "предел равен значению"
+        ],
+        "correct_index": 0,
+        "explanation": "Разрыв первого рода (скачок) — когда оба односторонних предела существуют и конечны, но различны."
+      },
+      {
+        "id": "cont_hard_01",
+        "difficulty": "hard",
+        "question_text": "Вставьте слово: «Элементарные функции непрерывны на своей ________.»",
+        "options": ["области определения", "всей числовой прямой", "интервале (0,1)", "множестве рациональных чисел"],
+        "correct_index": 0,
+        "explanation": "Элементарные функции непрерывны в каждой точке, где они определены."
+      }
+    ]
+  },
+  {
+    "id": "infinitesimal_comparison",
+    "title": "Сравнение бесконечно малых и эквивалентные функции",
+    "exercises": [
+      {
+        "id": "infn_easy_01",
+        "difficulty": "easy",
+        "question_text": "Две бесконечно малые α и β эквивалентны, если \\(\\lim \\frac{\\alpha}{\\beta}\\) = ?",
+        "options": ["1", "0", "∞", "−1"],
+        "correct_index": 0,
+        "explanation": "Эквивалентность означает, что отношение стремится к 1."
+      },
+      {
+        "id": "infn_medium_01",
+        "difficulty": "medium",
+        "question_text": "При x→0 эквивалентными являются:",
+        "options": ["sin x и x", "sin x и x²", "cos x и x", "e^x и x"],
+        "correct_index": 0,
+        "explanation": "sin x / x → 1 — первый замечательный предел."
+      },
+      {
+        "id": "infn_medium_02",
+        "difficulty": "medium",
+        "question_text": "Какая замена некорректна?",
+        "options": [
+          "замена tg x на x в сумме tg x − x",
+          "замена sin x на x в произведении",
+          "замена ln(1+x) на x в числителе",
+          "замена (e^x-1) на x в знаменателе"
+        ],
+        "correct_index": 0,
+        "explanation": "В суммах и разностях замена бесконечно малых на эквивалентные может привести к ошибке."
+      },
+      {
+        "id": "infn_hard_01",
+        "difficulty": "hard",
+        "question_text": "Вычислите предел, используя эквивалентности: \\(\\lim_{x\\to 0} \\frac{e^{3x}-1}{\\sin 2x}\\).",
+        "options": ["3/2", "1", "0", "2/3"],
+        "correct_index": 0,
+        "explanation": "e^{3x}-1 ~ 3x, sin 2x ~ 2x → (3x)/(2x) = 3/2."
+      }
+    ]
+  },
+  {
+    "id": "lhopital_rule",
+    "title": "Правило Лопиталя (факультативно)",
+    "exercises": [
+      {
+        "id": "lhop_easy_01",
+        "difficulty": "easy",
+        "question_text": "Правило Лопиталя применимо к неопределённостям:",
+        "options": ["0/0 и ∞/∞", "0·∞", "∞−∞", "1^∞"],
+        "correct_index": 0,
+        "explanation": "Правило Лопиталя непосредственно применяется только к 0/0 и ∞/∞."
+      },
+      {
+        "id": "lhop_medium_01",
+        "difficulty": "medium",
+        "question_text": "Примените правило Лопиталя: \\(\\lim_{x\\to 0} \\frac{\\sin x}{x}\\).",
+        "options": ["1", "0", "∞", "предел не существует"],
+        "correct_index": 0,
+        "explanation": "Производная числителя cos x, знаменателя 1, при x=0 получаем 1/1=1."
+      },
+      {
+        "id": "lhop_medium_02",
+        "difficulty": "medium",
+        "question_text": "Сколько раз нужно применить правило Лопиталя к \\(\\lim_{x\\to 0} \\frac{1-\\cos x}{x^2}\\)?",
+        "options": ["достаточно одного раза", "два раза", "три раза", "правило не применимо"],
+        "correct_index": 0,
+        "explanation": "Первое применение даёт sin x / (2x), и мы сразу узнаём предел 1/2."
+      },
+      {
+        "id": "lhop_hard_01",
+        "difficulty": "hard",
+        "question_text": "Вычислите \\(\\lim_{x\\to 0} \\frac{e^x - e^{-x}}{x}\\).",
+        "options": ["2", "1", "0", "e"],
+        "correct_index": 0,
+        "explanation": "Применяем правило Лопиталя: (e^x + e^{-x})/1 → 2 при x→0."
+      }
+    ]
+  }
+]
